@@ -1,0 +1,68 @@
+.topnav a:not(:first-child) {
+    display: none;
+}
+
+.topnav a.icon {
+    float: right;
+    display: block;
+}
+
+.topnav.responsive {
+    position: relative;
+}
+
+.topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+
+button[type=submit] {
+    margin-top: 0;
+}
+
+#number {
+    width: 100%;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+}
+
+.col-label {
+    width: 25%;
+}
+
+.col-input {
+    width: 60%;
+}
+
+label {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+.alert-done {
+    width: 85%;
+}
+
+.alert-error {
+    width: 85%;
+}
+
+table {
+    font-size: 2.5vw;
+}
+
+table th {
+    font-size: 3vw;
+}

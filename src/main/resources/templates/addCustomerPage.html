@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:include="fragments/head :: head"></div>
+<!--    <script src="../static/validation.js" defer></script>-->
+<!--    <script src="/webjars/jquery/jquery.min.js"></script>-->
+<!--    <script src="/webjars/sockjs-client/sockjs.min.js"></script>-->
+<!--    <script src="/webjars/stomp-websocket/stomp.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/web-socket.js"></script>
+    <title id="title">Add Customer</title>
+</head>
+<body>
+<div th:replace="fragments/nav-bar :: nav"></div>
+<div class="container">
+    <form action="#" th:action="@{/customer}" th:object="${customer}" method="post" id="customerForm">
+
+        <div class="row">
+            <div class="col-label">
+                <label for="customerName">Name</label>
+            </div>
+            <div class="col-input">
+                <input type="text" name="customerNameName" id="customerName" th:field="*{name}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">
+                <label for="customerAge">Age</label>
+            </div>
+            <div class="col-input">
+                <input type="text" name="customerAgeName" id="customerAge" th:field="*{age}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">
+                <label for="monthlyIncome">Monthly Income</label>
+            </div>
+            <div class="col-input">
+                <input type="text" name="monthlyIncomeName" id="monthlyIncome" th:field="*{monthlyIncome}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">
+                <label for="dependents">Number of Dependents</label>
+            </div>
+            <div class="col-input">
+                <input type="text" name="dependentsName" id="dependents" th:field="*{dependents}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label"></div>
+            <button type="submit">Add Customer</button>
+        </div>
+
+    </form>
+    <div th:replace="fragments/web-socket-customers :: webSocketCustomers"></div>
+    <div th:replace="fragments/nav-bar :: nav"></div>
+</div>
+</body>
+</html>

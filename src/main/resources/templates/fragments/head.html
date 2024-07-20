@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/style.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 776px)"
+          th:href="@{/laptop.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 775px) and (min-width: 601px)"
+          th:href="@{/laptopResponsiveNavBar.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 600px)"
+          th:href="@{/mobile.css}"/>
+    <title th:include=":: #title">Title</title>
+</head>
+<body>
+</body>
+</html>
