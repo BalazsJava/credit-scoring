@@ -13,10 +13,6 @@ public final class Customer {
     }
 
     public Customer(Long id, String name, Integer age, Long monthlyIncome, Integer dependents) {
-        // These may not be null, or an error will occur
-//        Objects.requireNonNull(name);
-//        Objects.requireNonNull(age);
-//        Objects.requireNonNull(monthlyIncome);
         this.id = id;
         this.name = name;
         this.age = age;
