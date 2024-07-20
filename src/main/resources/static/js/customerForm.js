@@ -84,3 +84,13 @@ function addCustomerToTable(customer) {
     `;
     tableBody.appendChild(row);
 }
+
+function increment(id) {
+    const input = document.getElementById(id);
+    input.value = parseInt(input.value) + 1 || 1;
+}
+
+function decrement(id) {
+    const input = document.getElementById(id);
+    input.value = Math.max(parseInt(input.value) - 1 || 0, 0);
+}

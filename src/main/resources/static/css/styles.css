@@ -36,3 +36,68 @@ h1 {
 .table tbody tr:hover {
     background-color: #f1f1f1;
 }
+
+/* Hide default number input spinner buttons */
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield; /* Standard */
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Style the container of custom buttons */
+.number-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.number-input-container input[type="number"] {
+    flex: 1;
+    padding-right: 60px; /* Add space for custom buttons */
+}
+
+.number-input-container .custom-btn {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+}
+
+.number-input-container .custom-btn:hover {
+    background: #0056b3;
+}
+
+.number-input-container .decrement-btn {
+    right: 0;
+    margin-right: 28px; /* Space for the increment button */
+    border-bottom: 1px solid #0056b3;
+    border-radius: 15px 0 0 15px; /* Adjust border-radius for styling */
+}
+
+.number-input-container .increment-btn {
+    right: 0;
+    border-top: 1px solid #0056b3;
+    border-radius: 0 15px 15px 0; /* Adjust border-radius for styling */
+}
+
+/* Add some margin to the input field to fit buttons properly */
+.number-input-container input[type="number"] {
+    margin-right: 40px; /* Space for the increment button */
+}
