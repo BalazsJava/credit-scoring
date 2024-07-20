@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Customer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Link to external CSS file -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="/js/customerForm.js" defer></script>
 </head>
 <body>
@@ -14,22 +17,27 @@
     <form id="customerForm">
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" class="form-control" required/>
+            <input type="text" id="name" name="name" class="form-control" required />
         </div>
         <div class="form-group">
             <label for="age">Age:</label>
-            <input type="number" id="age" name="age" class="form-control" required/>
+            <input type="number" id="age" name="age" class="form-control" required />
         </div>
         <div class="form-group">
             <label for="monthlyIncome">Monthly Income:</label>
-            <input type="number" id="monthlyIncome" name="monthlyIncome" class="form-control" required/>
+            <input type="number" id="monthlyIncome" name="monthlyIncome" class="form-control" required />
         </div>
         <div class="form-group">
             <label for="dependents">Dependents:</label>
-            <input type="number" id="dependents" name="dependents" class="form-control" required/>
+            <input type="number" id="dependents" name="dependents" class="form-control" required />
         </div>
         <button type="submit" class="btn btn-primary">Save Customer</button>
     </form>
+
+    <!-- Alert Popup -->
+    <div id="alertPopup" class="alert alert-success d-none" role="alert">
+        Customer saved with ID: <span id="customerId"></span>
+    </div>
 
     <div id="customerTable" style="margin-top: 30px;">
         <table class="table table-bordered">
@@ -47,6 +55,8 @@
             </tbody>
         </table>
     </div>
+
 </div>
+
 </body>
 </html>

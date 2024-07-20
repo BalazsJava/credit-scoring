@@ -2,11 +2,11 @@
 // debugger;
 // Then when you open the web page, and inspect the page (or F12), then it will stop at that point
 // You can step forward there in the code by F10, or let it run until the next debugger; with F8
-
 document.addEventListener("DOMContentLoaded", function() {
     // Load initial customer data
     loadCustomers();
 
+    // Handle form submission
     document.getElementById("customerForm").addEventListener("submit", async function(event) {
         event.preventDefault();
 
@@ -34,8 +34,15 @@ document.addEventListener("DOMContentLoaded", function() {
             const newCustomer = await response.json();
             addCustomerToTable(newCustomer);
 
-            // Show popup message with the new customer ID
-            alert(`Customer saved with ID: ${newCustomer.id}`);
+            // Show popup with the new customer ID
+            document.getElementById('customerId').textContent = newCustomer.id;
+            const alertPopup = document.getElementById('alertPopup');
+            alertPopup.classList.remove('d-none');
+
+            // Hide the popup after 5 seconds (5000 milliseconds)
+            setTimeout(() => {
+                alertPopup.classList.add('d-none');
+            }, 5000);
 
             // Reset the form
             this.reset();
@@ -58,6 +65,7 @@ async function loadCustomers() {
         console.error('Failed to load customers:', error);
     }
 }
+
 function addCustomerToTable(customer) {
     const tableBody = document.querySelector("#customerTable tbody");
     const row = document.createElement('tr');
