@@ -2,6 +2,7 @@
 // debugger;
 // Then when you open the web page, and inspect the page (or F12), then it will stop at that point
 // You can step forward there in the code by F10, or let it run until the next debugger; with F8
+
 document.addEventListener("DOMContentLoaded", function() {
     // Load initial customer data
     loadCustomers();
@@ -9,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // Handle form submission
     document.getElementById("customerForm").addEventListener("submit", async function(event) {
         event.preventDefault();
+
+        // Validate form data
+        if (!validateCustomerForm()) {
+            return; // Stop form submission if validation fails
+        }
 
         const formData = new FormData(this);
         const customer = {

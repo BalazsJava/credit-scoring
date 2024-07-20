@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Customer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css"> <!-- Link to external CSS file -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="/js/customerForm.js" defer></script>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Link to external CSS file -->
+    <script src="/js/customerFormValidation.js" defer></script> <!-- Link to validation script -->
+    <script src="/js/customerForm.js" defer></script> <!-- Link to main customer form script -->
 </head>
 <body>
 <div class="container">
@@ -17,19 +18,23 @@
     <form id="customerForm">
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" class="form-control" required />
+            <div id="nameError" class="alert alert-danger d-none" role="alert"></div>
+            <input type="text" id="name" name="name" class="form-control" />
         </div>
         <div class="form-group">
             <label for="age">Age:</label>
-            <input type="number" id="age" name="age" class="form-control" required />
+            <div id="ageError" class="alert alert-danger d-none" role="alert"></div>
+            <input type="number" id="age" name="age" class="form-control" />
         </div>
         <div class="form-group">
             <label for="monthlyIncome">Monthly Income:</label>
-            <input type="number" id="monthlyIncome" name="monthlyIncome" class="form-control" required />
+            <div id="monthlyIncomeError" class="alert alert-danger d-none" role="alert"></div>
+            <input type="number" id="monthlyIncome" name="monthlyIncome" class="form-control" />
         </div>
         <div class="form-group">
             <label for="dependents">Dependents:</label>
-            <input type="number" id="dependents" name="dependents" class="form-control" required />
+            <div id="dependentsError" class="alert alert-danger d-none" role="alert"></div>
+            <input type="number" id="dependents" name="dependents" class="form-control" />
         </div>
         <button type="submit" class="btn btn-primary">Save Customer</button>
     </form>
@@ -55,7 +60,6 @@
             </tbody>
         </table>
     </div>
-
 </div>
 
 </body>
