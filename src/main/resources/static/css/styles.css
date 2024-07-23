@@ -1,4 +1,8 @@
 body {
+    background-image: url('/image/background.jpg');
+    background-size: cover; /* Ensures the image covers the whole background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image */
     background-color: #f8f9fa;
     font-family: Arial, sans-serif;
 }
@@ -86,15 +90,15 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .number-input-container .decrement-btn {
     right: 0;
-    margin-right: 28px; /* Space for the increment button */
     border-bottom: 1px solid #0056b3;
-    border-radius: 15px 0 0 15px; /* Adjust border-radius for styling */
+    border-radius: 0 15px 15px 0; /* Adjust border-radius for styling */
 }
 
 .number-input-container .increment-btn {
     right: 0;
+    margin-right: 28px; /* Space for the increment button */
     border-top: 1px solid #0056b3;
-    border-radius: 0 15px 15px 0; /* Adjust border-radius for styling */
+    border-radius: 15px 0 0 15px; /* Adjust border-radius for styling */
 }
 
 /* Add some margin to the input field to fit buttons properly */
