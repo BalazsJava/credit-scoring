@@ -40,6 +40,8 @@ h1 {
 
 #customerTable {
     margin-top: 30px;
+    overflow-x: auto; /* Ensure the table container does not overflow */
+    margin-top: 100px; /* Align the table with the form */
 }
 
 .table {
@@ -119,11 +121,6 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Add some margin to the input field to fit buttons properly */
 .number-input-container input[type="number"] {
     margin-right: 40px; /* Space for the increment button */
-}
-
-#customerTable {
-    overflow-x: auto; /* Ensure the table container does not overflow */
-    margin-top: 100px; /* Align the table with the form */
 }
 
 /* Ensure the alert doesn't expand the form container */
