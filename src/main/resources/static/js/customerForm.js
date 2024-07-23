@@ -40,15 +40,19 @@ document.addEventListener("DOMContentLoaded", function() {
             const newCustomer = await response.json();
             addCustomerToTable(newCustomer);
 
-            // Show popup with the new customer ID
+            // Display the alert popup with the customer ID
             document.getElementById('customerId').textContent = newCustomer.id;
-            const alertPopup = document.getElementById('alertPopup');
-            alertPopup.classList.remove('d-none');
+            var alertPopup = document.getElementById("alertPopup");
+            alertPopup.classList.remove("d-none");
+            alertPopup.classList.add("show");
 
-            // Hide the popup after 5 seconds (5000 milliseconds)
-            setTimeout(() => {
-                alertPopup.classList.add('d-none');
-            }, 5000);
+            // Hide the alert popup after 3 seconds
+            setTimeout(function () {
+                alertPopup.classList.remove("show");
+                setTimeout(function () {
+                    alertPopup.classList.add("d-none");
+                }, 500); // Wait for the transition to complete
+            }, 3000);
 
             // Reset the form
             this.reset();

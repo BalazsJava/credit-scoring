@@ -20,8 +20,6 @@ repositories {
 dependencies {
 	// General
 	implementation("org.springframework.boot:spring-boot-starter-web:3.3.1")
-	// Frontend
-//	implementation("org.webjars:jquery:3.7.1")
 	// Database
 	implementation("org.springframework.boot:spring-boot-starter-jdbc:3.3.1")
 	runtimeOnly("mysql:mysql-connector-java:8.0.33")

@@ -14,63 +14,72 @@
 </head>
 <body>
 <div class="container">
-    <h1>Add Customer</h1>
-    <form id="customerForm">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <div id="nameError" class="alert alert-danger d-none" role="alert"></div>
-            <input type="text" id="name" name="name" class="form-control" />
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Add Customer</h1>
+            <form id="customerForm" class="d-flex flex-column">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <div id="nameError" class="alert alert-danger d-none" role="alert"></div>
+                    <input type="text" id="name" name="name" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <div id="ageError" class="alert alert-danger d-none" role="alert"></div>
+                    <div class="number-input-container">
+                        <button type="button" class="custom-btn decrement-btn" onclick="decrement('age')">-</button>
+                        <input type="number" id="age" name="age" class="form-control"/>
+                        <button type="button" class="custom-btn increment-btn" onclick="increment('age')">+</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="monthlyIncome">Monthly Income:</label>
+                    <div id="monthlyIncomeError" class="alert alert-danger d-none" role="alert"></div>
+                    <div class="number-input-container">
+                        <button type="button" class="custom-btn decrement-btn" onclick="decrement('monthlyIncome')">-
+                        </button>
+                        <input type="number" id="monthlyIncome" name="monthlyIncome" class="form-control"/>
+                        <button type="button" class="custom-btn increment-btn" onclick="increment('monthlyIncome')">+
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dependents">Dependents:</label>
+                    <div id="dependentsError" class="alert alert-danger d-none" role="alert"></div>
+                    <div class="number-input-container">
+                        <button type="button" class="custom-btn decrement-btn" onclick="decrement('dependents')">-
+                        </button>
+                        <input type="number" id="dependents" name="dependents" class="form-control"/>
+                        <button type="button" class="custom-btn increment-btn" onclick="increment('dependents')">+
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button type="submit" class="btn btn-primary">Save Customer</button>
+                    <div id="alertPopup" class="alert alert-success d-none ml-3" role="alert">
+                        Customer saved with ID: <span id="customerId"></span>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="age">Age:</label>
-            <div id="ageError" class="alert alert-danger d-none" role="alert"></div>
-            <div class="number-input-container">
-                <button type="button" class="custom-btn decrement-btn" onclick="decrement('age')">-</button>
-                <input type="number" id="age" name="age" class="form-control" />
-                <button type="button" class="custom-btn increment-btn" onclick="increment('age')">+</button>
+        <div class="col-md-6"> <!-- Added margin-top to align with the form -->
+            <div id="customerTable">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Monthly Income</th>
+                        <th>Dependents</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Data will be dynamically inserted here -->
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="form-group">
-            <label for="monthlyIncome">Monthly Income:</label>
-            <div id="monthlyIncomeError" class="alert alert-danger d-none" role="alert"></div>
-            <div class="number-input-container">
-                <button type="button" class="custom-btn decrement-btn" onclick="decrement('monthlyIncome')">-</button>
-                <input type="number" id="monthlyIncome" name="monthlyIncome" class="form-control" />
-                <button type="button" class="custom-btn increment-btn" onclick="increment('monthlyIncome')">+</button>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="dependents">Dependents:</label>
-            <div id="dependentsError" class="alert alert-danger d-none" role="alert"></div>
-            <div class="number-input-container">
-                <button type="button" class="custom-btn decrement-btn" onclick="decrement('dependents')">-</button>
-                <input type="number" id="dependents" name="dependents" class="form-control" />
-                <button type="button" class="custom-btn increment-btn" onclick="increment('dependents')">+</button>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Save Customer</button>
-    </form>
-
-    <!-- Alert Popup -->
-    <div id="alertPopup" class="alert alert-success d-none" role="alert">
-        Customer saved with ID: <span id="customerId"></span>
-    </div>
-
-    <div id="customerTable" style="margin-top: 30px;">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Monthly Income</th>
-                <th>Dependents</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- Data will be dynamically inserted here -->
-            </tbody>
-        </table>
     </div>
 </div>
 </body>
