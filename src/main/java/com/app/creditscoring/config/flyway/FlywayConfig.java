@@ -1,4 +1,4 @@
-package com.app.creditscoring.flyway;
+package com.app.creditscoring.config.flyway;
 
 import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +14,19 @@ public class FlywayConfig {
     @Autowired
     private DataSource dataSource;
 
+    @Value("${spring.flyway.cleanDisabled}")
+    private boolean cleanDisabled;
     @Value("${spring.flyway.clean.on-start}")
     private boolean cleanOnStart;
+    @Value("${spring.flyway.locations}")
+    private String locations;
 
     @Bean(initMethod = "migrate")
     public Flyway flyway() {
         Flyway flyway = Flyway.configure()
                 .dataSource(dataSource)
-                .locations("classpath:db/migration")
-                .cleanDisabled(false)
+                .locations(locations)
+                .cleanDisabled(cleanDisabled)
                 .load();
         if (cleanOnStart) {
             flyway.clean(); // Clean the database to only have initial data
