@@ -1,6 +1,7 @@
 package com.app.creditscoring.api.customer;
 
 import com.app.creditscoring.api.customer.error.notfound.CustomerNotFoundException;
+import com.app.creditscoring.api.customer.swagger.CustomerApiDocumentation;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
@@ -8,7 +9,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
 
 @RestController
-public class CustomerController {
+public class CustomerController implements CustomerApiDocumentation {
 
     private final CustomerRepository customerRepository;
 

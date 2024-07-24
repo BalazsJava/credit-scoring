@@ -20,6 +20,8 @@ repositories {
 dependencies {
 	// General
 	implementation("org.springframework.boot:spring-boot-starter-web:3.3.1")
+	// Swagger
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
 	// Database
 	implementation("org.springframework.boot:spring-boot-starter-jdbc:3.3.1")
 	runtimeOnly("mysql:mysql-connector-java:8.0.33")
