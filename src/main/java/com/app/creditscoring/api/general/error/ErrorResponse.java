@@ -1,4 +1,4 @@
-package com.app.creditscoring.api.error;
+package com.app.creditscoring.api.general.error;
 
 import java.util.List;
 

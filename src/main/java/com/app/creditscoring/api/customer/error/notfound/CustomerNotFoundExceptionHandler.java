@@ -1,6 +1,6 @@
 package com.app.creditscoring.api.customer.error.notfound;
 
-import com.app.creditscoring.api.error.ErrorResponse;
+import com.app.creditscoring.api.general.error.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

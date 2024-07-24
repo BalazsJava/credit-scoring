@@ -1,4 +1,4 @@
-package com.app.creditscoring.api.error;
+package com.app.creditscoring.api.general.error;
 
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
