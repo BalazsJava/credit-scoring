@@ -17,10 +17,10 @@ public class CustomerController implements CustomerApiDocumentation {
         this.customerRepository = customerRepository;
     }
 
-    @GetMapping("/customer")
+    @GetMapping("/customer/new")
     public RedirectView getNewCustomerPage() {
         // By default, Spring looks for the file path within: src/main/resources/static/...
-        return new RedirectView("html/addCustomerPage.html");
+        return new RedirectView("/html/customer/addCustomerPage.html");
     }
 
     @ResponseBody
