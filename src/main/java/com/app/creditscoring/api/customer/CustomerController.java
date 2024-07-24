@@ -1,5 +1,7 @@
 package com.app.creditscoring.api.customer;
 
+import com.app.creditscoring.api.customer.error.notfound.CustomerNotFoundException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -28,6 +30,19 @@ public class CustomerController {
         // The database generated the ID
         // Constructing result customer with it
         return new Customer(id, customer);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/customer")
+    public void deleteCustomerById(@RequestParam("id") long id) {
+        customerRepository.deleteById(id);
+    }
+
+    @ResponseBody
+    @GetMapping("/customer/{id}")
+    public Customer getCustomerById(@PathVariable("id") long id) {
+        return customerRepository.findById(id)
+                .orElseThrow(() -> new CustomerNotFoundException(id));
     }
 
     @ResponseBody

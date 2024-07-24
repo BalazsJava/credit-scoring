@@ -3,19 +3,10 @@ package com.app.creditscoring.config.jdbc;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.lang.NonNull;
 
-import java.util.List;
-
 public class BeanSqlParameterSource extends BeanPropertySqlParameterSource {
 
     public BeanSqlParameterSource(Object object) {
         super(object);
-    }
-
-    public static BeanSqlParameterSource[] toParameters(List<? extends Object> entities) {
-        return entities
-                .stream()
-                .map(BeanSqlParameterSource::new)
-                .toArray(BeanSqlParameterSource[]::new);
     }
 
     @Override

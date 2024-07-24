@@ -60,7 +60,7 @@ public class CustomerRepository {
         );
     }
 
-    public Optional<Customer> findById(String customerId) {
+    public Optional<Customer> findById(long customerId) {
         String sql = """
                 SELECT id, name, age, monthly_income, dependents
                 FROM customer
@@ -74,6 +74,16 @@ public class CustomerRepository {
                         BeanPropertyRowMapper.newInstance(Customer.class)
                 )
         );
+    }
+
+    public void deleteById(long customerId) {
+        String sql = """
+                DELETE
+                FROM customer
+                WHERE id = :id
+                """;
+
+        jdbcTemplate.update(sql, new MapSqlParameterSource("id", customerId));
     }
 
 }

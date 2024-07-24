@@ -1,8 +1,7 @@
 package com.app.creditscoring.api.customer;
 
-import java.util.Objects;
-
 public final class Customer {
+
     private Long id;
     private String name;
     private Integer age;
@@ -10,6 +9,7 @@ public final class Customer {
     private Integer dependents;
 
     public Customer() {
+        // Needed for JDBC
     }
 
     public Customer(Long id, String name, Integer age, Long monthlyIncome, Integer dependents) {
@@ -21,8 +21,13 @@ public final class Customer {
     }
 
     public Customer(Long id, Customer customer) {
-        this(id, customer.name(), customer.age(),
-                customer.monthlyIncome(), customer.dependents());
+        this(
+                id,
+                customer.name(),
+                customer.age(),
+                customer.monthlyIncome(),
+                customer.dependents()
+        );
     }
 
     public Long id() {
@@ -83,33 +88,6 @@ public final class Customer {
 
     public void setDependents(Integer dependents) {
         this.dependents = dependents;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (Customer) obj;
-        return Objects.equals(this.id, that.id) &&
-               Objects.equals(this.name, that.name) &&
-               Objects.equals(this.age, that.age) &&
-               Objects.equals(this.monthlyIncome, that.monthlyIncome) &&
-               Objects.equals(this.dependents, that.dependents);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, age, monthlyIncome, dependents);
-    }
-
-    @Override
-    public String toString() {
-        return "Customer[" +
-               "id=" + id + ", " +
-               "name=" + name + ", " +
-               "age=" + age + ", " +
-               "monthlyIncome=" + monthlyIncome + ", " +
-               "dependents=" + dependents + ']';
     }
 
 }
